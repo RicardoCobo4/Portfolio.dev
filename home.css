@@ -127,6 +127,9 @@
     margin-top: 0.5rem;
     transition: all 0.3s ease;
   }
+  .box.show-more .info-completa {
+  display: block !important;
+}
   .toggle-button {
     width: 100%;
     padding: 0.7rem;
@@ -499,11 +502,7 @@
     display: none;
   }
   
-  .info-completa {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
+
   
   .leer-menos-btn {
     display: none;

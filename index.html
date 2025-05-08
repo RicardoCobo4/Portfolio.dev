@@ -121,15 +121,15 @@ Always learning, creating, and pushing the boundaries of interactive experiences
       <div class="info-completa" style="display: none;">
         <p class="box-info">
         </p> <br>
-        <ul class="box-info"> 
+        <p class="box-info"> 
          <strong> Complex Blender: <br> </strong> 
           Created high-poly 3D models with intricate topology for optimal in-game performance<br>
           Developed modular environment kits with PBR materials for procedural level design<br>
           Implemented advanced sculpting techniques for organic assets (characters, creatures)<br>
           Designed multi-layered shader systems using Node-based material workflows<br>
           Optimized models through retopology and LOD systems for various platforms<br>
-        </ul><br>
-        <ul class="box-info"> 
+        </p><br>
+        <p class="box-info"> 
           <strong> Unity Engine Implementation <br> </strong>
           Built interactive 3D environments with dynamic lighting and post-processing effects <br>
 
@@ -140,8 +140,8 @@ Implemented physics-based interactions using Unity's DOTS and ECS architectures 
 Created tool systems for procedural generation of terrain and assets <br>
 
 Optimized scenes using occlusion culling, light baking, and asset bundling <br>
-        </ul> <br>
-        <ul class="box-info"> 
+        </p> <br>
+        <p class="box-info"> 
           <strong> Technical Pipeline Highlights <br> </strong>
           Established Blender-to-Unity workflow with automated FBX/GLTF export presets <br>
 
@@ -150,7 +150,7 @@ Developed custom Unity editor tools to streamline asset implementation <br>
 Created real-time rendering solutions blending Blender's Eevee with Unity's URP/HDRP <br>
 
 Implemented vertex animation systems for performance-efficient complex motions <br>
-</ul>
+        </p>
 
 
       </div>
@@ -227,23 +227,18 @@ Implemented vertex animation systems for performance-efficient complex motions <
 </body>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll('.toggle-button').forEach(button => {
-        button.addEventListener('click', () => {
-          const container = button.closest('.box');
-          const extraInfo = container.querySelector('.info-completa');
-          
-          if (extraInfo.style.display === 'block') {
-            extraInfo.style.display = 'none';
-            button.textContent = 'See More ↓';
-          } else {
-            extraInfo.style.display = 'block';
-            button.textContent = 'See Less ↑';
-          }
-        });
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.toggle-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const box = button.closest('.box');
+        box.classList.toggle('show-more');
+
+        const isVisible = box.classList.contains('show-more');
+        button.textContent = isVisible ? 'See Less ↑' : 'See More ↓';
       });
     });
-  </script>
+  });
+</script>
   
   
   
